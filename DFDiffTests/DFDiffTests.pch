@@ -1,0 +1,15 @@
+//
+//  DFDiffTests.pch
+//  DFDiff
+//
+//  Created by Marcin Iwanicki on 13/12/2015.
+//  Copyright © 2015 Marcin Iwanicki. All rights reserved.
+//
+
+#ifndef DFDiffTests_pch
+#define DFDiffTests_pch
+
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
+
+#endif /* DFDiffTests_pch */
