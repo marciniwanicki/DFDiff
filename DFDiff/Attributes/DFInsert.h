@@ -6,10 +6,11 @@
 #import <Foundation/Foundation.h>
 
 
-@interface DFInsert <ObjectType> : NSObject
+@interface DFInsert
+<ObjectType> : NSObject
 
-@property (nonatomic, readonly) NSInteger index;
-@property (nonatomic, readonly) ObjectType value;
+@property(nonatomic, readonly) NSInteger index;
+@property(nonatomic, readonly) ObjectType value;
 
 - (instancetype)initWithIndex:(NSInteger)index value:(id)value;
 

@@ -7,9 +7,6 @@
 //
 
 #import "DFDiff.h"
-#import "DFMove.h"
-#import "DFInsert.h"
-#import "DFDelete.h"
 
 @implementation DFDiff
 

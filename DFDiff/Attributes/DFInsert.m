@@ -7,8 +7,8 @@
 
 @interface DFInsert ()
 
-@property (nonatomic) NSInteger index;
-@property (nonatomic) id value;
+@property(nonatomic) NSInteger index;
+@property(nonatomic) id value;
 
 @end
 
@@ -57,7 +57,7 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.index=%li", (long)self.index];
+    [description appendFormat:@"self.index=%li", (long) self.index];
     [description appendFormat:@", self.value=%@", self.value];
     [description appendString:@">"];
     return description;

@@ -7,7 +7,8 @@
 #import "DFDiff.h"
 #import "DFDiffId.h"
 
-@interface DFArrayDiff <ObjectType> : DFDiff <NSArray<ObjectType <DFDiffId>> *>
+@interface DFArrayDiff
+<ObjectType> : DFDiff <NSArray<ObjectType <DFDiffId>> *>
 
 - (instancetype)initWithSource:(NSArray<ObjectType <DFDiffId>> *)source origin:(NSArray<ObjectType <DFDiffId>> *)origin;
 

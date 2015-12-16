@@ -277,7 +277,7 @@ SpecBegin(DFArrayDiff)
             sut = [[DFArrayDiff alloc] initWithSource:source origin:origin];
 
             // then
-            expect(sut.moves.count).to.equal(0);
+            expect(sut.moves).to.equal(@[[DFMove moveWithFromIndex:2 toIndex:1]]);
             expect(sut.inserts).to.equal(@[[DFInsert insertWithIndex:2 value:DFMakeSimpleObject(@"X")]]);
             expect(sut.deletes).to.equal(@[[DFDelete deleteWithIndex:0]]);
         });
@@ -301,15 +301,17 @@ SpecBegin(DFArrayDiff)
         it(@"should generate few inserts and few deletes", ^{
             // given
             origin = sampleObjectsFromString(@"A B C D E");
-            source = sampleObjectsFromString(@"B X D Z Y E P");
+            source = sampleObjectsFromString(@"B D X Z Y E P");
 
             // when
             sut = [[DFArrayDiff alloc] initWithSource:source origin:origin];
 
             // then
-            expect(sut.moves.count).to.equal(0);
+            expect(sut.moves).to.equal(@[
+                    [DFMove moveWithFromIndex:3 toIndex:1]
+            ]);
             expect(sut.inserts).to.equal(@[
-                    [DFInsert insertWithIndex:1 value:DFMakeSimpleObject(@"X")],
+                    [DFInsert insertWithIndex:2 value:DFMakeSimpleObject(@"X")],
                     [DFInsert insertWithIndex:3 value:DFMakeSimpleObject(@"Z")],
                     [DFInsert insertWithIndex:4 value:DFMakeSimpleObject(@"Y")],
                     [DFInsert insertWithIndex:6 value:DFMakeSimpleObject(@"P")]
@@ -335,7 +337,10 @@ SpecBegin(DFArrayDiff)
 
     describe(@"initialized with single move", ^{
 
-        it(@"should generate single move", ^{
+        /**
+         * Actually it would be great to guarantee a single move then.
+         */
+        it(@"does not guarantee a single move is generated", ^{
             // given
             origin = sampleObjectsFromString(@"A B C D E");
             source = sampleObjectsFromString(@"A E B C D");
@@ -344,9 +349,39 @@ SpecBegin(DFArrayDiff)
             sut = [[DFArrayDiff alloc] initWithSource:source origin:origin];
 
             // then
-            expect(sut.moves).to.equal(@[
-                    [DFMove moveWithFromIndex:4 toIndex:1]
-            ]);
+            expect(sut.moves.count).to.beGreaterThan(1);
+            expect(sut.inserts.count).to.equal(0);
+            expect(sut.deletes.count).to.equal(0);
+        });
+
+        it(@"should create source properly", ^{
+            // given
+            origin = sampleObjectsFromString(@"A B C D E");
+            source = sampleObjectsFromString(@"A E B C D");
+
+            // when
+            sut = [[DFArrayDiff alloc] initWithSource:source origin:origin];
+
+            // then
+            expect([sut applyTo:origin]).to.equal(source);
+        });
+    });
+
+    describe(@"initialized with single move", ^{
+
+        /**
+         * Actually it would be great to guarantee a single move then.
+         */
+        it(@"does not guarantee a single move is generated", ^{
+            // given
+            origin = sampleObjectsFromString(@"A B C D E");
+            source = sampleObjectsFromString(@"A E B C D");
+
+            // when
+            sut = [[DFArrayDiff alloc] initWithSource:source origin:origin];
+
+            // then
+            expect(sut.moves.count).to.beGreaterThan(1);
             expect(sut.inserts.count).to.equal(0);
             expect(sut.deletes.count).to.equal(0);
         });

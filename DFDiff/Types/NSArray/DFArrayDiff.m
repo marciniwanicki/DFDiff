@@ -10,9 +10,9 @@
 
 @interface DFArrayDiff ()
 
-@property (nonatomic) NSArray <DFDelete *> *deletes;
-@property (nonatomic) NSArray <DFInsert *> *inserts;
-@property (nonatomic) NSArray <DFMove *> *moves;
+@property(nonatomic) NSArray <DFDelete *> *deletes;
+@property(nonatomic) NSArray <DFInsert *> *inserts;
+@property(nonatomic) NSArray <DFMove *> *moves;
 
 @end
 
@@ -22,7 +22,7 @@
 @synthesize inserts = _inserts;
 @synthesize moves = _moves;
 
-- (instancetype)initWithSource:(NSArray <id<DFDiffId>> *)source origin:(NSArray <id<DFDiffId>> *)origin {
+- (instancetype)initWithSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin {
     self = [self init];
     if (self) {
         [self prepareDiffForSource:source origin:origin];
@@ -30,7 +30,7 @@
     return self;
 }
 
-- (NSArray <id<DFDiffId>> *)applyTo:(NSArray <id<DFDiffId>> *)array {
+- (NSArray <id <DFDiffId>> *)applyTo:(NSArray <id <DFDiffId>> *)array {
     NSUInteger newCount = array.count + self.inserts.count - self.deletes.count;
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:newCount];
     for (NSInteger i = 0; i < newCount; ++i) {
@@ -46,40 +46,40 @@
     for (DFMove *move in self.moves) {
         result[move.toIndex] = array[move.fromIndex];
     }
-    
+
     // copy the rest items from array but ignore deleted
     for (NSInteger i = 0; i < array.count; ++i) {
         BOOL diffIdDeleted = NO;
-        
+
         for (NSInteger j = 0; j < self.deletes.count; ++j) {
             if (self.deletes[j].index == i) {
                 diffIdDeleted = YES;
                 break;
             }
         }
-        
+
         if (diffIdDeleted) {
             continue;
         }
-        
+
         BOOL diffIdAlreadyInserted = NO;
         NSString *diffId = [self diffId:i array:array];
         for (NSInteger j = 0; j < newCount; ++j) {
             if ([result[j] isEqual:[NSNull null]]) {
                 continue;
             }
-            
+
             NSString *existingDiffId = [self diffId:j array:result];
             if ([diffId isEqualToString:existingDiffId]) {
                 diffIdAlreadyInserted = YES;
                 break;
             }
         }
-        
+
         if (diffIdAlreadyInserted) {
             continue;
         }
-        
+
         for (NSInteger j = 0; j < newCount; ++j) {
             if ([result[j] isEqual:[NSNull null]]) {
                 result[j] = array[i];
@@ -94,13 +94,13 @@
 
 #pragma mark - Private
 
-- (void)prepareDiffForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id<DFDiffId>> *)origin {
+- (void)prepareDiffForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin {
     [self prepareMovesAndDeletesForSource:source origin:origin];
     [self prepareInsertsForSource:source origin:origin];
     [self optimizeMoves];
 }
 
-- (void)prepareMovesAndDeletesForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id<DFDiffId>> *)origin {
+- (void)prepareMovesAndDeletesForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin {
     NSMutableArray *moves = [NSMutableArray array];
     NSMutableArray *deletes = [NSMutableArray array];
 
@@ -129,7 +129,7 @@
     self.deletes = deletes;
 }
 
-- (void)prepareInsertsForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id<DFDiffId>> *)origin {
+- (void)prepareInsertsForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin {
     NSMutableArray *inserts = [NSMutableArray array];
 
     for (NSInteger i = 0; i < source.count; ++i) {
@@ -153,49 +153,60 @@
 }
 
 - (void)optimizeMoves {
-    NSMutableArray *moves = [self.moves mutableCopy];
-    NSMutableArray *movesToDelete = [NSMutableArray array];
-
-    for (NSInteger i = 0; i < self.moves.count; ++i) {
-        DFMove *move = moves[i];
-
-        NSInteger deleteInsertBalance = [self insertDeleteBalanceForIndex:move.fromIndex];
-
-        if (move.toIndex - move.fromIndex == deleteInsertBalance) {
-            [movesToDelete addObject:move];
-        }
-    }
-
-    [moves removeObjectsInArray:movesToDelete];
+    NSMutableArray <DFMove *> *moves = [self.moves mutableCopy];
     self.moves = moves;
+
+    NSInteger i = 0;
+    while (i < moves.count) {
+        if ([self isMoveGuaranteedByOtherOperations:moves[i]]) {
+            [moves removeObjectAtIndex:i];
+            continue;
+        }
+        ++i;
+    }
 }
 
-- (NSString *)diffId:(NSInteger)index array:(NSArray <id<DFDiffId>> *)array {
+- (NSString *)diffId:(NSInteger)index array:(NSArray <id <DFDiffId>> *)array {
     return array[index].diffId;
 }
 
-- (NSInteger)insertDeleteBalanceForIndex:(NSInteger)index {
-    NSInteger deleteInsertBalance = 0;
-    
-    for (NSInteger j = 0; j <= index; ++j) {
-        NSInteger sumOfInserts = 0;
+- (BOOL)isMoveGuaranteedByOtherOperations:(DFMove *)move {
+    NSInteger deltaBalance = 0;
+
+    for (NSInteger j = 0; j <= move.fromIndex; ++j) {
+        NSInteger deltaFromInserts = 0;
         for (NSInteger k = 0; k < self.inserts.count; ++k) {
             if (self.inserts[k].index == j) {
-                ++sumOfInserts;
-            }
-        }
-        
-        NSInteger sumOfDeletes = 0;
-        for (NSInteger k = 0; k < self.deletes.count; ++k) {
-            if (self.deletes[k].index == j) {
-                ++sumOfDeletes;
+                ++deltaFromInserts;
             }
         }
 
-        deleteInsertBalance += (sumOfInserts - sumOfDeletes);
+        NSInteger deltaFromDeletes = 0;
+        for (NSInteger k = 0; k < self.deletes.count; ++k) {
+            if (self.deletes[k].index == j) {
+                ++deltaFromDeletes;
+            }
+        }
+
+        NSInteger deltaFromMoves = 0;
+        for (DFMove *otherMove in self.moves) {
+            if ([otherMove isEqualToMove:move]) {
+                continue;
+            }
+
+            if (otherMove.fromIndex < move.fromIndex && otherMove.toIndex > move.toIndex) {
+                --deltaFromMoves;
+            }
+
+            if (otherMove.fromIndex > move.fromIndex && otherMove.toIndex < move.toIndex) {
+                ++deltaFromMoves;
+            }
+        }
+
+        deltaBalance += (deltaFromInserts - deltaFromDeletes + deltaFromMoves);
     }
-    
-    return deleteInsertBalance;
+
+    return deltaBalance == [move delta];
 }
 
 @end

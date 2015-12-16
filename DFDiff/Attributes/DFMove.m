@@ -7,8 +7,8 @@
 
 @interface DFMove ()
 
-@property (nonatomic) NSInteger fromIndex;
-@property (nonatomic) NSInteger toIndex;
+@property(nonatomic) NSInteger fromIndex;
+@property(nonatomic) NSInteger toIndex;
 
 @end
 
@@ -26,6 +26,10 @@
 
 + (instancetype)moveWithFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
     return [[self alloc] initWithFromIndex:fromIndex toIndex:toIndex];
+}
+
+- (NSInteger)delta {
+    return self.toIndex - self.fromIndex;
 }
 
 - (BOOL)isEqual:(id)other {
@@ -57,8 +61,8 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.fromIndex=%li", (long)self.fromIndex];
-    [description appendFormat:@", self.toIndex=%li", (long)self.toIndex];
+    [description appendFormat:@"self.fromIndex=%i", self.fromIndex];
+    [description appendFormat:@", self.toIndex=%i", self.toIndex];
     [description appendString:@">"];
     return description;
 }

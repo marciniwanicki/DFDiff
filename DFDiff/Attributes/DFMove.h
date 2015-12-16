@@ -8,10 +8,12 @@
 
 @interface DFMove : NSObject
 
-@property (nonatomic, readonly) NSInteger fromIndex;
-@property (nonatomic, readonly) NSInteger toIndex;
+@property(nonatomic, readonly) NSInteger fromIndex;
+@property(nonatomic, readonly) NSInteger toIndex;
 
 - (instancetype)initWithFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+
+- (NSInteger)delta;
 
 - (NSString *)description;
 

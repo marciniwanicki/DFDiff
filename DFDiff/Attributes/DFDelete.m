@@ -7,7 +7,7 @@
 
 @interface DFDelete ()
 
-@property (nonatomic) NSInteger index;
+@property(nonatomic) NSInteger index;
 
 @end
 
@@ -51,7 +51,7 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.index=%li", (long)self.index];
+    [description appendFormat:@"self.index=%li", (long) self.index];
     [description appendString:@">"];
     return description;
 }

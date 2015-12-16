@@ -12,11 +12,12 @@
 @class DFInsert;
 @class DFDelete;
 
-@interface DFDiff<ObjectType> : NSObject
+@interface DFDiff
+<ObjectType> : NSObject
 
-@property (nonatomic, readonly) NSArray <DFDelete *> *deletes;
-@property (nonatomic, readonly) NSArray <DFInsert *> *inserts;
-@property (nonatomic, readonly) NSArray <DFMove *> *moves;
+@property(nonatomic, readonly) NSArray <DFDelete *> *deletes;
+@property(nonatomic, readonly) NSArray <DFInsert *> *inserts;
+@property(nonatomic, readonly) NSArray <DFMove *> *moves;
 
 - (instancetype)initWithSource:(ObjectType)source origin:(ObjectType)origin;
 
