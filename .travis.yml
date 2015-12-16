@@ -1,4 +1,5 @@
 language: objective-c
 osx_image: xcode7.2
-xcode_workspace: DFDiff.xcworkspace
-xcode_scheme: DFDiff
+script:
+  - xctool -workspace DFDiff.xcworkspace -scheme DFDiff build
+  - xctool -workspace DFDiff.xcworkspace -scheme DFDiffTests build test
