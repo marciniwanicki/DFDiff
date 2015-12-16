@@ -33,7 +33,7 @@
 - (NSArray <id <DFDiffId>> *)applyTo:(NSArray <id <DFDiffId>> *)array {
     NSUInteger newCount = array.count + self.inserts.count - self.deletes.count;
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:newCount];
-    for (NSInteger i = 0; i < newCount; ++i) {
+    for (NSUInteger i = 0; i < newCount; ++i) {
         [result addObject:[NSNull null]];
     }
 
@@ -48,10 +48,10 @@
     }
 
     // copy the rest items from array but ignore deleted
-    for (NSInteger i = 0; i < array.count; ++i) {
+    for (NSUInteger i = 0; i < array.count; ++i) {
         BOOL diffIdDeleted = NO;
 
-        for (NSInteger j = 0; j < self.deletes.count; ++j) {
+        for (NSUInteger j = 0; j < self.deletes.count; ++j) {
             if (self.deletes[j].index == i) {
                 diffIdDeleted = YES;
                 break;
@@ -64,8 +64,8 @@
 
         BOOL diffIdAlreadyInserted = NO;
         NSString *diffId = [self diffId:i array:array];
-        for (NSInteger j = 0; j < newCount; ++j) {
-            if ([result[j] isEqual:[NSNull null]]) {
+        for (NSUInteger j = 0; j < newCount; ++j) {
+            if ([result[(NSUInteger) j] isEqual:[NSNull null]]) {
                 continue;
             }
 
@@ -80,9 +80,9 @@
             continue;
         }
 
-        for (NSInteger j = 0; j < newCount; ++j) {
-            if ([result[j] isEqual:[NSNull null]]) {
-                result[j] = array[i];
+        for (NSInteger j = 0; j < (NSInteger) newCount; ++j) {
+            if ([result[(NSUInteger) j] isEqual:[NSNull null]]) {
+                result[j] = array[(NSUInteger) i];
                 break;
             }
         }
@@ -104,11 +104,11 @@
     NSMutableArray *moves = [NSMutableArray array];
     NSMutableArray *deletes = [NSMutableArray array];
 
-    for (NSInteger i = 0; i < origin.count; ++i) {
+    for (NSUInteger i = 0; i < origin.count; ++i) {
         NSString *originDiffId = [self diffId:i array:origin];
         BOOL diffIdDeleted = YES;
 
-        for (NSInteger j = 0; j < source.count; ++j) {
+        for (NSUInteger j = 0; j < source.count; ++j) {
             NSString *sourceDiffId = [self diffId:j array:source];
 
             if ([sourceDiffId isEqualToString:originDiffId]) {
@@ -132,11 +132,11 @@
 - (void)prepareInsertsForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin {
     NSMutableArray *inserts = [NSMutableArray array];
 
-    for (NSInteger i = 0; i < source.count; ++i) {
+    for (NSUInteger i = 0; i < source.count; ++i) {
         NSString *sourceDiffId = [self diffId:i array:source];
         BOOL diffIdInserted = YES;
 
-        for (NSInteger j = 0; j < origin.count; ++j) {
+        for (NSUInteger j = 0; j < origin.count; ++j) {
             NSString *originDiffId = [self diffId:j array:origin];
             if ([sourceDiffId isEqualToString:originDiffId]) {
                 diffIdInserted = NO;
@@ -145,7 +145,7 @@
         }
 
         if (diffIdInserted) {
-            [inserts addObject:[DFInsert insertWithIndex:i value:source[i]]];
+            [inserts addObject:[DFInsert insertWithIndex:i value:source[(NSUInteger) i]]];
         }
     }
 
@@ -156,7 +156,7 @@
     NSMutableArray <DFMove *> *moves = [self.moves mutableCopy];
     self.moves = moves;
 
-    NSInteger i = 0;
+    NSUInteger i = 0;
     while (i < moves.count) {
         if ([self isMoveGuaranteedByOtherOperations:moves[i]]) {
             [moves removeObjectAtIndex:i];
@@ -166,23 +166,23 @@
     }
 }
 
-- (NSString *)diffId:(NSInteger)index array:(NSArray <id <DFDiffId>> *)array {
+- (NSString *)diffId:(NSUInteger)index array:(NSArray <id <DFDiffId>> *)array {
     return array[index].diffId;
 }
 
 - (BOOL)isMoveGuaranteedByOtherOperations:(DFMove *)move {
     NSInteger deltaBalance = 0;
 
-    for (NSInteger j = 0; j <= move.fromIndex; ++j) {
+    for (NSUInteger j = 0; j <= move.fromIndex; ++j) {
         NSInteger deltaFromInserts = 0;
-        for (NSInteger k = 0; k < self.inserts.count; ++k) {
+        for (NSUInteger k = 0; k < self.inserts.count; ++k) {
             if (self.inserts[k].index == j) {
                 ++deltaFromInserts;
             }
         }
 
         NSInteger deltaFromDeletes = 0;
-        for (NSInteger k = 0; k < self.deletes.count; ++k) {
+        for (NSUInteger k = 0; k < self.deletes.count; ++k) {
             if (self.deletes[k].index == j) {
                 ++deltaFromDeletes;
             }

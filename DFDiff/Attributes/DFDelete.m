@@ -7,13 +7,13 @@
 
 @interface DFDelete ()
 
-@property(nonatomic) NSInteger index;
+@property(nonatomic) NSUInteger index;
 
 @end
 
 @implementation DFDelete
 
-- (instancetype)initWithIndex:(NSInteger)index {
+- (instancetype)initWithIndex:(NSUInteger)index {
     self = [super init];
     if (self) {
         self.index = index;
@@ -22,7 +22,7 @@
     return self;
 }
 
-+ (instancetype)deleteWithIndex:(NSInteger)index {
++ (instancetype)deleteWithIndex:(NSUInteger)index {
     return [[self alloc] initWithIndex:index];
 }
 

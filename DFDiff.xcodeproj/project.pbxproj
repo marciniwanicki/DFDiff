@@ -43,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		513BA70D1C221BEB009F3224 /* DFDiff.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DFDiff.xcconfig; sourceTree = "<group>"; };
 		51B0AD271C1DD85D00B620E3 /* libDFDiff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDFDiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B0AD2A1C1DD85D00B620E3 /* DFDiff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFDiff.h; sourceTree = "<group>"; };
 		51B0AD2C1C1DD85D00B620E3 /* DFDiff.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFDiff.m; sourceTree = "<group>"; };
@@ -86,9 +87,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		513BA70C1C221BEB009F3224 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				513BA70D1C221BEB009F3224 /* DFDiff.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		51B0AD1E1C1DD85D00B620E3 = {
 			isa = PBXGroup;
 			children = (
+				513BA70C1C221BEB009F3224 /* Config */,
 				51B0AD291C1DD85D00B620E3 /* DFDiff */,
 				51B0AD3C1C1DDFDF00B620E3 /* DFDiffTests */,
 				51B0AD281C1DD85D00B620E3 /* Products */,
@@ -370,6 +380,7 @@
 /* Begin XCBuildConfiguration section */
 		51B0AD2E1C1DD85D00B620E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 513BA70D1C221BEB009F3224 /* DFDiff.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -414,6 +425,7 @@
 		};
 		51B0AD2F1C1DD85D00B620E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 513BA70D1C221BEB009F3224 /* DFDiff.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
