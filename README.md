@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://raw.github.com/marciniwanicki/DFDiff/Resources/dfdiff.png" alt="DFDiff demo" title="DFDiff demo">
+  <img src="https://raw.githubusercontent.com/marciniwanicki/DFDiff/master/Resources/dfdiff.png" alt="DFDiff demo" title="DFDiff demo">
 </p>
 
 ![Build status](https://travis-ci.org/marciniwanicki/DFDiff.svg?branch=master)
@@ -7,7 +7,7 @@
 This small and extremely simple Objective-C library might help you to find a set of simple operations (insert, delete, move) to transform one array into another i.e. @[A, B] -/diff/-> @[B, A], diff = [move(0, 1)]. Currently the library supports only single-dimensional arrays (`NSArray`). **It also provides a convenient way to animate reloading data in** `UITableView` &#128163; **.**
 
 <p align="center">
-  <img src="https://raw.github.com/marciniwanicki/DFDiff/Resources/dfdiff-demo.gif" alt="DFDiff" title="DFDiff">
+  <img src="https://raw.githubusercontent.com/marciniwanicki/DFDiff/master/Resources/dfdiff-demo.gif" alt="DFDiff" title="DFDiff">
 </p>
 
 # How to use
