@@ -9,10 +9,10 @@
 @interface DFInsert
 <ObjectType> : NSObject
 
-@property(nonatomic, readonly) NSInteger index;
+@property(nonatomic, readonly) NSUInteger index;
 @property(nonatomic, readonly) ObjectType value;
 
-- (instancetype)initWithIndex:(NSInteger)index value:(id)value;
+- (instancetype)initWithIndex:(NSUInteger)index value:(id)value;
 
 - (NSString *)description;
 
@@ -22,6 +22,6 @@
 
 - (NSUInteger)hash;
 
-+ (instancetype)insertWithIndex:(NSInteger)index value:(id)value;
++ (instancetype)insertWithIndex:(NSUInteger)index value:(id)value;
 
 @end

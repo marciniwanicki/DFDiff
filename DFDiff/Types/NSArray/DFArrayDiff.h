@@ -12,6 +12,8 @@
 
 - (instancetype)initWithSource:(NSArray<ObjectType <DFDiffId>> *)source origin:(NSArray<ObjectType <DFDiffId>> *)origin;
 
+- (instancetype)initWithSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin optimizeMoves:(BOOL)optimizeMoves;
+
 - (NSArray<ObjectType <DFDiffId>> *)applyTo:(NSArray<ObjectType <DFDiffId>> *)object;
 
 @end

@@ -8,10 +8,10 @@
 
 @interface DFMove : NSObject
 
-@property(nonatomic, readonly) NSInteger fromIndex;
-@property(nonatomic, readonly) NSInteger toIndex;
+@property(nonatomic, readonly) NSUInteger fromIndex;
+@property(nonatomic, readonly) NSUInteger toIndex;
 
-- (instancetype)initWithFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (instancetype)initWithFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 
 - (NSInteger)delta;
 
@@ -23,6 +23,6 @@
 
 - (NSUInteger)hash;
 
-+ (instancetype)moveWithFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
++ (instancetype)moveWithFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 
 @end

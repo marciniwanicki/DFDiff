@@ -10,17 +10,34 @@
 		51B0AD2B1C1DD85D00B620E3 /* DFDiff.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 51B0AD2A1C1DD85D00B620E3 /* DFDiff.h */; };
 		51B0AD2D1C1DD85D00B620E3 /* DFDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B0AD2C1C1DD85D00B620E3 /* DFDiff.m */; };
 		51B0AD401C1DDFDF00B620E3 /* libDFDiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B0AD271C1DD85D00B620E3 /* libDFDiff.a */; };
+		51D2C7E31C25C9DC00912D93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D2C7E21C25C9DC00912D93 /* main.m */; };
+		51D2C7E61C25C9DC00912D93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D2C7E51C25C9DC00912D93 /* AppDelegate.m */; };
+		51D2C7EC1C25C9DC00912D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D2C7EA1C25C9DC00912D93 /* Main.storyboard */; };
+		51D2C7EE1C25C9DC00912D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51D2C7ED1C25C9DC00912D93 /* Assets.xcassets */; };
+		51D2C7F11C25C9DC00912D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D2C7EF1C25C9DC00912D93 /* LaunchScreen.storyboard */; };
+		51D2C7FD1C25E9A600912D93 /* libDFDiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B0AD271C1DD85D00B620E3 /* libDFDiff.a */; };
 		524E809FCB49FA61DAE9AFDF /* DFInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E8E06F2CE528EB3F41CA2 /* DFInsert.m */; };
 		524E81EA2ACE526E8D9FC003 /* DFArrayDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E8AD81152563D7E934408 /* DFArrayDiffSpec.m */; };
+		524E83A16122DDC4DB89FF34 /* DFArrayDiffDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E877987D7A7D30D49552B /* DFArrayDiffDemoViewController.m */; };
 		524E83FAF1FB624D4C9A527F /* DFArrayDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E847D3CC449C6DB3638B3 /* DFArrayDiff.m */; };
 		524E8608EF0518D03E85FDF5 /* DFDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E819F23E133CA26433107 /* DFDelete.m */; };
 		524E86669A07C6AAA79B74E4 /* DFMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E801522D516FFA55F141F /* DFMove.m */; };
+		524E87BC1D48130F7D85C3C0 /* DFArrayDiffDemoModelEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E87DCE1CE7A3DFC3EDACD /* DFArrayDiffDemoModelEntity.m */; };
+		524E89F415D3F7EDEFD6CBDD /* DFArrayDiffDemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E8319B4B2A645DDAB9BB0 /* DFArrayDiffDemoModel.m */; };
 		524E8B8A60BF603B7F0B54ED /* DFSimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E871599B07512E43B21E4 /* DFSimpleObject.m */; };
+		524E8D11544C97D5F3AF58B6 /* DFTableDataReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E8775ACF9007572782CC0 /* DFTableDataReloader.m */; };
 		B7FC83288935F014A191F789 /* libPods-DFDiffTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF8123EE96DE0AB6A436670 /* libPods-DFDiffTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		51B0AD411C1DDFDF00B620E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51B0AD1F1C1DD85D00B620E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51B0AD261C1DD85D00B620E3;
+			remoteInfo = DFDiff;
+		};
+		51D2C7FB1C25E95500912D93 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 51B0AD1F1C1DD85D00B620E3 /* Project object */;
 			proxyType = 1;
@@ -43,24 +60,41 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		513BA70D1C221BEB009F3224 /* DFDiff.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DFDiff.xcconfig; sourceTree = "<group>"; };
 		51B0AD271C1DD85D00B620E3 /* libDFDiff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDFDiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B0AD2A1C1DD85D00B620E3 /* DFDiff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFDiff.h; sourceTree = "<group>"; };
 		51B0AD2C1C1DD85D00B620E3 /* DFDiff.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFDiff.m; sourceTree = "<group>"; };
 		51B0AD3B1C1DDFDF00B620E3 /* DFDiffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DFDiffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B0AD3F1C1DDFDF00B620E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51B0AD461C1E09FD00B620E3 /* DFDiffTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFDiffTests.pch; sourceTree = "<group>"; };
+		51D2C7DF1C25C9DC00912D93 /* DFDiffDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DFDiffDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D2C7E21C25C9DC00912D93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		51D2C7E41C25C9DC00912D93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		51D2C7E51C25C9DC00912D93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		51D2C7EB1C25C9DC00912D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		51D2C7ED1C25C9DC00912D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		51D2C7F01C25C9DC00912D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		51D2C7F21C25C9DC00912D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524E801522D516FFA55F141F /* DFMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMove.m; sourceTree = "<group>"; };
 		524E8165BA88B0AEAE6B5012 /* DFArrayDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFArrayDiff.h; sourceTree = "<group>"; };
 		524E819F23E133CA26433107 /* DFDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFDelete.m; sourceTree = "<group>"; };
 		524E823A9D2DFDEE33AB1029 /* DFMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMove.h; sourceTree = "<group>"; };
+		524E8319B4B2A645DDAB9BB0 /* DFArrayDiffDemoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFArrayDiffDemoModel.m; sourceTree = "<group>"; };
 		524E847D3CC449C6DB3638B3 /* DFArrayDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFArrayDiff.m; sourceTree = "<group>"; };
 		524E848EDB4573F9198A42D1 /* DFDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFDelete.h; sourceTree = "<group>"; };
 		524E871599B07512E43B21E4 /* DFSimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFSimpleObject.m; sourceTree = "<group>"; };
 		524E87588100EE867BF481EC /* DFDiffId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFDiffId.h; sourceTree = "<group>"; };
+		524E8775ACF9007572782CC0 /* DFTableDataReloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFTableDataReloader.m; sourceTree = "<group>"; };
+		524E877987D7A7D30D49552B /* DFArrayDiffDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFArrayDiffDemoViewController.m; sourceTree = "<group>"; };
 		524E877F2BA5C9F18AE323D8 /* DFSimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFSimpleObject.h; sourceTree = "<group>"; };
+		524E87952D3B98072A547040 /* DFArrayDiffDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFArrayDiffDemoViewController.h; sourceTree = "<group>"; };
+		524E87DCE1CE7A3DFC3EDACD /* DFArrayDiffDemoModelEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFArrayDiffDemoModelEntity.m; sourceTree = "<group>"; };
+		524E8A9E3F86CA42701C0065 /* DFArrayDiffDemoModelEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFArrayDiffDemoModelEntity.h; sourceTree = "<group>"; };
 		524E8AD81152563D7E934408 /* DFArrayDiffSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFArrayDiffSpec.m; sourceTree = "<group>"; };
+		524E8CCD2A89549902E12D07 /* DFTableDataReloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFTableDataReloader.h; sourceTree = "<group>"; };
 		524E8E06F2CE528EB3F41CA2 /* DFInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFInsert.m; sourceTree = "<group>"; };
 		524E8E44072A2D187334319E /* DFInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFInsert.h; sourceTree = "<group>"; };
+		524E8EA1397D0991AF820E70 /* DFArrayDiffDemoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFArrayDiffDemoModel.h; sourceTree = "<group>"; };
 		60CC212FBD22438DEB06B32C /* Pods-DFDiffTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFDiffTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFDiffTests/Pods-DFDiffTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5047BC1851E32A36A52C102 /* Pods-DFDiffTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFDiffTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DFDiffTests/Pods-DFDiffTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FEF8123EE96DE0AB6A436670 /* libPods-DFDiffTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DFDiffTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,14 +117,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51D2C7DC1C25C9DC00912D93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D2C7FD1C25E9A600912D93 /* libDFDiff.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		513BA70C1C221BEB009F3224 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				513BA70D1C221BEB009F3224 /* DFDiff.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		51B0AD1E1C1DD85D00B620E3 = {
 			isa = PBXGroup;
 			children = (
+				513BA70C1C221BEB009F3224 /* Config */,
 				51B0AD291C1DD85D00B620E3 /* DFDiff */,
 				51B0AD3C1C1DDFDF00B620E3 /* DFDiffTests */,
+				51D2C7E01C25C9DC00912D93 /* DFDiffDemo */,
 				51B0AD281C1DD85D00B620E3 /* Products */,
 				6B9387391E86AAF1950DC72D /* Pods */,
 				5CD34AA9CF1726292A30FC7B /* Frameworks */,
@@ -102,6 +154,7 @@
 			children = (
 				51B0AD271C1DD85D00B620E3 /* libDFDiff.a */,
 				51B0AD3B1C1DDFDF00B620E3 /* DFDiffTests.xctest */,
+				51D2C7DF1C25C9DC00912D93 /* DFDiffDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,7 +166,8 @@
 				51B0AD2C1C1DD85D00B620E3 /* DFDiff.m */,
 				524E87588100EE867BF481EC /* DFDiffId.h */,
 				524E83A3C00CBECBA6B124F0 /* Types */,
-				524E8F1E99DAC3901B65EDFA /* Attributes */,
+				524E8F1E99DAC3901B65EDFA /* Operations */,
+				524E88F7204D33C76FA7AF84 /* Utils */,
 			);
 			path = DFDiff;
 			sourceTree = "<group>";
@@ -127,6 +181,29 @@
 				524E80B9536FFDA906C3BCFC /* Types */,
 			);
 			path = DFDiffTests;
+			sourceTree = "<group>";
+		};
+		51D2C7E01C25C9DC00912D93 /* DFDiffDemo */ = {
+			isa = PBXGroup;
+			children = (
+				51D2C7E41C25C9DC00912D93 /* AppDelegate.h */,
+				51D2C7E51C25C9DC00912D93 /* AppDelegate.m */,
+				51D2C7EA1C25C9DC00912D93 /* Main.storyboard */,
+				51D2C7ED1C25C9DC00912D93 /* Assets.xcassets */,
+				51D2C7EF1C25C9DC00912D93 /* LaunchScreen.storyboard */,
+				51D2C7F21C25C9DC00912D93 /* Info.plist */,
+				51D2C7E11C25C9DC00912D93 /* Supporting Files */,
+				524E8C1DD5C74299FBCBC8E9 /* DFArrayDiffDemo */,
+			);
+			path = DFDiffDemo;
+			sourceTree = "<group>";
+		};
+		51D2C7E11C25C9DC00912D93 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				51D2C7E21C25C9DC00912D93 /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		524E80B9536FFDA906C3BCFC /* Types */ = {
@@ -143,6 +220,15 @@
 				524E8AD81152563D7E934408 /* DFArrayDiffSpec.m */,
 			);
 			path = NSArray;
+			sourceTree = "<group>";
+		};
+		524E82DE41C46029D7AD83AF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				524E877987D7A7D30D49552B /* DFArrayDiffDemoViewController.m */,
+				524E87952D3B98072A547040 /* DFArrayDiffDemoViewController.h */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		524E83A3C00CBECBA6B124F0 /* Types */ = {
@@ -162,7 +248,44 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		524E8F1E99DAC3901B65EDFA /* Attributes */ = {
+		524E86A42671172E28D06C21 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				524E87DCE1CE7A3DFC3EDACD /* DFArrayDiffDemoModelEntity.m */,
+				524E8A9E3F86CA42701C0065 /* DFArrayDiffDemoModelEntity.h */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		524E88F7204D33C76FA7AF84 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				524E8775ACF9007572782CC0 /* DFTableDataReloader.m */,
+				524E8CCD2A89549902E12D07 /* DFTableDataReloader.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		524E894286B58B08FFC1FBDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				524E8319B4B2A645DDAB9BB0 /* DFArrayDiffDemoModel.m */,
+				524E8EA1397D0991AF820E70 /* DFArrayDiffDemoModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		524E8C1DD5C74299FBCBC8E9 /* DFArrayDiffDemo */ = {
+			isa = PBXGroup;
+			children = (
+				524E82DE41C46029D7AD83AF /* ViewController */,
+				524E894286B58B08FFC1FBDB /* Model */,
+				524E86A42671172E28D06C21 /* Entity */,
+			);
+			path = DFArrayDiffDemo;
+			sourceTree = "<group>";
+		};
+		524E8F1E99DAC3901B65EDFA /* Operations */ = {
 			isa = PBXGroup;
 			children = (
 				524E801522D516FFA55F141F /* DFMove.m */,
@@ -172,7 +295,7 @@
 				524E819F23E133CA26433107 /* DFDelete.m */,
 				524E848EDB4573F9198A42D1 /* DFDelete.h */,
 			);
-			path = Attributes;
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		524E8FB83DCE4C135EBAC2A2 /* NSArray */ = {
@@ -242,6 +365,24 @@
 			productReference = 51B0AD3B1C1DDFDF00B620E3 /* DFDiffTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		51D2C7DE1C25C9DC00912D93 /* DFDiffDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51D2C7F51C25C9DC00912D93 /* Build configuration list for PBXNativeTarget "DFDiffDemo" */;
+			buildPhases = (
+				51D2C7DB1C25C9DC00912D93 /* Sources */,
+				51D2C7DC1C25C9DC00912D93 /* Frameworks */,
+				51D2C7DD1C25C9DC00912D93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51D2C7FC1C25E95500912D93 /* PBXTargetDependency */,
+			);
+			name = DFDiffDemo;
+			productName = DFDiffDemo;
+			productReference = 51D2C7DF1C25C9DC00912D93 /* DFDiffDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -257,6 +398,9 @@
 					51B0AD3A1C1DDFDF00B620E3 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
+					51D2C7DE1C25C9DC00912D93 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 				};
 			};
 			buildConfigurationList = 51B0AD221C1DD85D00B620E3 /* Build configuration list for PBXProject "DFDiff" */;
@@ -265,6 +409,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 51B0AD1E1C1DD85D00B620E3;
 			productRefGroup = 51B0AD281C1DD85D00B620E3 /* Products */;
@@ -273,6 +418,7 @@
 			targets = (
 				51B0AD261C1DD85D00B620E3 /* DFDiff */,
 				51B0AD3A1C1DDFDF00B620E3 /* DFDiffTests */,
+				51D2C7DE1C25C9DC00912D93 /* DFDiffDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -282,6 +428,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51D2C7DD1C25C9DC00912D93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D2C7F11C25C9DC00912D93 /* LaunchScreen.storyboard in Resources */,
+				51D2C7EE1C25C9DC00912D93 /* Assets.xcassets in Resources */,
+				51D2C7EC1C25C9DC00912D93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +502,7 @@
 				524E809FCB49FA61DAE9AFDF /* DFInsert.m in Sources */,
 				524E8608EF0518D03E85FDF5 /* DFDelete.m in Sources */,
 				524E8B8A60BF603B7F0B54ED /* DFSimpleObject.m in Sources */,
+				524E8D11544C97D5F3AF58B6 /* DFTableDataReloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +514,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51D2C7DB1C25C9DC00912D93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D2C7E61C25C9DC00912D93 /* AppDelegate.m in Sources */,
+				51D2C7E31C25C9DC00912D93 /* main.m in Sources */,
+				524E89F415D3F7EDEFD6CBDD /* DFArrayDiffDemoModel.m in Sources */,
+				524E83A16122DDC4DB89FF34 /* DFArrayDiffDemoViewController.m in Sources */,
+				524E87BC1D48130F7D85C3C0 /* DFArrayDiffDemoModelEntity.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -365,11 +534,36 @@
 			target = 51B0AD261C1DD85D00B620E3 /* DFDiff */;
 			targetProxy = 51B0AD411C1DDFDF00B620E3 /* PBXContainerItemProxy */;
 		};
+		51D2C7FC1C25E95500912D93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51B0AD261C1DD85D00B620E3 /* DFDiff */;
+			targetProxy = 51D2C7FB1C25E95500912D93 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		51D2C7EA1C25C9DC00912D93 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51D2C7EB1C25C9DC00912D93 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		51D2C7EF1C25C9DC00912D93 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51D2C7F01C25C9DC00912D93 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		51B0AD2E1C1DD85D00B620E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 513BA70D1C221BEB009F3224 /* DFDiff.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -414,6 +608,7 @@
 		};
 		51B0AD2F1C1DD85D00B620E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 513BA70D1C221BEB009F3224 /* DFDiff.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -492,6 +687,32 @@
 			};
 			name = Release;
 		};
+		51D2C7F31C25C9DC00912D93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DFDiffDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marciniwanicki.DFDiffDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51D2C7F41C25C9DC00912D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DFDiffDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marciniwanicki.DFDiffDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -518,6 +739,15 @@
 			buildConfigurations = (
 				51B0AD441C1DDFDF00B620E3 /* Debug */,
 				51B0AD451C1DDFDF00B620E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51D2C7F51C25C9DC00912D93 /* Build configuration list for PBXNativeTarget "DFDiffDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51D2C7F31C25C9DC00912D93 /* Debug */,
+				51D2C7F41C25C9DC00912D93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

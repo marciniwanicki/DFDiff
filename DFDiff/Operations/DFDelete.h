@@ -7,9 +7,9 @@
 
 @interface DFDelete : NSObject
 
-@property(nonatomic, readonly) NSInteger index;
+@property(nonatomic, readonly) NSUInteger index;
 
-- (instancetype)initWithIndex:(NSInteger)index;
+- (instancetype)initWithIndex:(NSUInteger)index;
 
 - (NSString *)description;
 
@@ -19,6 +19,6 @@
 
 - (NSUInteger)hash;
 
-+ (instancetype)deleteWithIndex:(NSInteger)index;
++ (instancetype)deleteWithIndex:(NSUInteger)index;
 
 @end

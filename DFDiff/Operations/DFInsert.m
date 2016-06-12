@@ -7,14 +7,14 @@
 
 @interface DFInsert ()
 
-@property(nonatomic) NSInteger index;
+@property(nonatomic) NSUInteger index;
 @property(nonatomic) id value;
 
 @end
 
 @implementation DFInsert
 
-- (instancetype)initWithIndex:(NSInteger)index value:(id)value {
+- (instancetype)initWithIndex:(NSUInteger)index value:(id)value {
     self = [super init];
     if (self) {
         self.index = index;
@@ -24,7 +24,7 @@
     return self;
 }
 
-+ (instancetype)insertWithIndex:(NSInteger)index value:(id)value {
++ (instancetype)insertWithIndex:(NSUInteger)index value:(id)value {
     return [[self alloc] initWithIndex:index value:value];
 }
 
@@ -50,7 +50,7 @@
 }
 
 - (NSUInteger)hash {
-    NSUInteger hash = (NSUInteger) self.index;
+    NSUInteger hash = self.index;
     hash = hash * 31u + [self.value hash];
     return hash;
 }

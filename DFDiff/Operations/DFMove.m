@@ -7,14 +7,14 @@
 
 @interface DFMove ()
 
-@property(nonatomic) NSInteger fromIndex;
-@property(nonatomic) NSInteger toIndex;
+@property(nonatomic) NSUInteger fromIndex;
+@property(nonatomic) NSUInteger toIndex;
 
 @end
 
 @implementation DFMove
 
-- (instancetype)initWithFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
+- (instancetype)initWithFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex {
     self = [super init];
     if (self) {
         self.fromIndex = fromIndex;
@@ -24,12 +24,12 @@
     return self;
 }
 
-+ (instancetype)moveWithFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
++ (instancetype)moveWithFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex {
     return [[self alloc] initWithFromIndex:fromIndex toIndex:toIndex];
 }
 
 - (NSInteger)delta {
-    return self.toIndex - self.fromIndex;
+    return (NSInteger) (self.toIndex - self.fromIndex);
 }
 
 - (BOOL)isEqual:(id)other {
@@ -55,14 +55,14 @@
 
 - (NSUInteger)hash {
     NSUInteger hash = (NSUInteger) self.fromIndex;
-    hash = hash * 31u + self.toIndex;
+    hash = hash * 31u + (NSUInteger) self.toIndex;
     return hash;
 }
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.fromIndex=%i", self.fromIndex];
-    [description appendFormat:@", self.toIndex=%i", self.toIndex];
+    [description appendFormat:@"self.fromIndex=%li", (long) self.fromIndex];
+    [description appendFormat:@", self.toIndex=%li", (long) self.toIndex];
     [description appendString:@">"];
     return description;
 }
