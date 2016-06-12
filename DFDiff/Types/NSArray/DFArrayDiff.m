@@ -13,6 +13,7 @@
 @property(nonatomic) NSArray <DFDelete *> *deletes;
 @property(nonatomic) NSArray <DFInsert *> *inserts;
 @property(nonatomic) NSArray <DFMove *> *moves;
+@property(nonatomic) BOOL shouldOptimizeMoves;
 
 @end
 
@@ -23,8 +24,14 @@
 @synthesize moves = _moves;
 
 - (instancetype)initWithSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin {
+    return [self initWithSource:source origin:origin optimizeMoves:YES];
+}
+
+- (instancetype)initWithSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin optimizeMoves:(BOOL)optimizeMoves {
     self = [self init];
     if (self) {
+        self.shouldOptimizeMoves = optimizeMoves;
+
         [self prepareDiffForSource:source origin:origin];
     }
     return self;
@@ -97,7 +104,10 @@
 - (void)prepareDiffForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin {
     [self prepareMovesAndDeletesForSource:source origin:origin];
     [self prepareInsertsForSource:source origin:origin];
-    [self optimizeMoves];
+
+    if (self.shouldOptimizeMoves) {
+        [self optimizeMoves];
+    }
 }
 
 - (void)prepareMovesAndDeletesForSource:(NSArray <id <DFDiffId>> *)source origin:(NSArray <id <DFDiffId>> *)origin {
